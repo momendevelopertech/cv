@@ -15,6 +15,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Momen Ahmed Ellaban | Software Engineering Lead" />
   <meta name="twitter:description" content="Enterprise engineering leadership, ERP architecture, and digital transformation consulting across GCC." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
@@ -264,10 +265,16 @@
       .hero { padding-top: 2.1rem; }
     }
 
+    .print-note {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 0.6rem;
+    }
+
     @media print {
       @page {
         size: A4;
-        margin: 14mm;
+        margin: 9mm;
       }
 
       .top-nav,
@@ -278,8 +285,8 @@
 
       body {
         background: #fff;
-        font-size: 11pt;
-        line-height: 1.45;
+        font-size: 9.2pt;
+        line-height: 1.28;
       }
 
       .container {
@@ -292,13 +299,27 @@
       .role,
       .expertise-card {
         border-color: #c8c8c8;
+        padding: 0.45rem 0;
+        margin-bottom: 0.45rem;
         break-inside: avoid;
         page-break-inside: avoid;
       }
 
-      h1 { font-size: 25pt; }
-      h2 { font-size: 15pt; }
-      h3 { font-size: 12pt; }
+      .role ul,
+      .expertise-card p,
+      .lead,
+      .hero-meta p,
+      li {
+        margin-bottom: 0.2rem;
+      }
+
+      #volunteer {
+        page-break-before: always;
+      }
+
+      h1 { font-size: 19pt; margin-bottom: 0.3rem; }
+      h2 { font-size: 12pt; margin-bottom: 0.35rem; }
+      h3 { font-size: 10.2pt; margin-bottom: 0.2rem; }
 
       a {
         text-decoration: none;
@@ -332,10 +353,10 @@
           I build high-performance delivery cultures that align architecture, governance, and execution with board-level business priorities.
         </p>
         <div class="cta-group" aria-label="Call to actions">
-          <a class="btn" href="cv.pdf" download>Download CV PDF (Method A)</a>
-          <button class="btn btn-accent" id="printCvBtn" type="button">Download CV as PDF (Method B)</button>
+          <a class="btn btn-accent" href="cv.pdf" download>Download CV (PDF)</a>
           <a class="btn" href="#contact">Contact Me</a>
         </div>
+        <p class="print-note">PDF is optimized for 2 A4 pages.</p>
       </div>
       <aside class="hero-meta" aria-label="Quick contact details">
         <p><strong>Location:</strong> Alexandria, Egypt (Open to GCC relocation/travel)</p>
@@ -504,9 +525,6 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-    document.getElementById('printCvBtn').addEventListener('click', function () {
-      window.print();
-    });
   </script>
 </body>
 </html>
