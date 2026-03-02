@@ -313,9 +313,6 @@
         margin-bottom: 0.2rem;
       }
 
-      #volunteer {
-        page-break-before: always;
-      }
 
       h1 { font-size: 19pt; margin-bottom: 0.3rem; }
       h2 { font-size: 12pt; margin-bottom: 0.35rem; }
@@ -353,10 +350,10 @@
           I build high-performance delivery cultures that align architecture, governance, and execution with board-level business priorities.
         </p>
         <div class="cta-group" aria-label="Call to actions">
-          <a class="btn btn-accent" href="cv.pdf" download>Download CV (PDF)</a>
+          <button class="btn btn-accent" type="button" onclick="downloadCvPdf()">Download CV (PDF)</button>
           <a class="btn" href="#contact">Contact Me</a>
         </div>
-        <p class="print-note">PDF is optimized for 2 A4 pages.</p>
+        <p class="print-note">PDF is optimized for clean multi-page export with all CV sections included.</p>
       </div>
       <aside class="hero-meta" aria-label="Quick contact details">
         <p><strong>Location:</strong> Alexandria, Egypt (Open to GCC relocation/travel)</p>
@@ -467,25 +464,12 @@
       </div>
     </section>
 
-    <section class="section container split" id="education-certifications">
-      <div>
-        <h2>Education</h2>
-        <article class="role">
-          <h3>B.Sc. Computer Engineering</h3>
-          <p class="role-meta"><span>Alexandria Higher Institute of Engineering & Technology (AIET)</span><span>2014 – 2019</span></p>
-        </article>
-      </div>
-      <div>
-        <h2>Certifications</h2>
-        <article class="role">
-          <h3>Professional Certifications (Placeholder)</h3>
-          <ul>
-            <li>Scrum Master Certification — [Issuer], [Year]</li>
-            <li>Oracle HCM Track Certification — [Issuer], [Year]</li>
-            <li>Cloud / Architecture Certification — [Issuer], [Year]</li>
-          </ul>
-        </article>
-      </div>
+    <section class="section container" id="education">
+      <h2>Education</h2>
+      <article class="role">
+        <h3>B.Sc. Computer Engineering</h3>
+        <p class="role-meta"><span>Alexandria Higher Institute of Engineering & Technology (AIET)</span><span>2014 – 2019</span></p>
+      </article>
     </section>
 
     <section class="section container" id="volunteer">
@@ -515,7 +499,6 @@
         <li><strong>GitHub:</strong> <a href="https://github.com/MomenEllaban" target="_blank" rel="noopener">github.com/MomenEllaban</a></li>
         <li><strong>Availability:</strong> Open for senior engineering leadership and consulting engagements across GCC and remote-first teams.</li>
       </ul>
-      <p class="print-hide" style="margin-top:1rem; color: var(--muted);">Tip: Replace placeholder certification entries and optional preview image meta tags before production launch.</p>
     </section>
   </main>
 
@@ -525,6 +508,10 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    function downloadCvPdf() {
+      window.print();
+    }
   </script>
 </body>
 </html>
